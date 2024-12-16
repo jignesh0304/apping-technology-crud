@@ -45,13 +45,9 @@
                                 <span class="nav-link">Welcome, {{ Auth::user()->name }}</span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <a class="nav-link" href="{{ route('logout') }}" >
                                     Logout
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
                             </li>
                         @else
                             <li class="nav-item">

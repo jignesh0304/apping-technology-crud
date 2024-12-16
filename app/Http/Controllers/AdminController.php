@@ -18,7 +18,7 @@ class AdminController extends Controller {
 
         if (Auth::attempt($credentials) && Auth::user()->is_admin) {
             $request->session()->regenerate();
-            return redirect()->route('admin.categories.index');
+            return redirect()->route('categories.index');
         }
 
         return back()->withErrors([
@@ -27,15 +27,11 @@ class AdminController extends Controller {
     }
     public function makeLogout()
 	{
-		auth()->guard(authGuard())->logout();
+		auth()->guard('web')->logout();
 	}
     public function logout()
 	{
 		$this->makeLogout();
-		return redirect(putRoute('login'))->with('success', siteLabel('success_logout'));
+		return redirect(route('login'))->with('success', 'Logout successfully!');
 	}
-
-    public function dashboard() {
-        return view('admin.dashboard');
-    }
 }

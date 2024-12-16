@@ -11,7 +11,7 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
             <h1 class="text-center mb-4">Admin Login</h1>
-            <form method="POST" action="{{ route('admin.login') }}">
+            <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
